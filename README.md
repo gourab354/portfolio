@@ -1,32 +1,34 @@
-# Gourab Dutta — Portfolio
+# Gourab Dutta — 3D Portfolio
 
-This is the real "Developer Portfolio" open-source template (by Abu Said) at
-https://github.com/said7388/developer-portfolio, customized with Gourab Dutta's
-real data — so the UI, layout, and animations match the reference site exactly.
+Based on the real open-source "portfolio-website" by Redoyanul Haque
+(https://github.com/red1-for-hek/portfolio-website), customized with Gourab
+Dutta's data. Built with React, TypeScript, Three.js, GSAP, and WebGL for the
+animated 3D character scene and scroll-driven animations.
 
-Built with Next.js 16, React 19, Tailwind CSS 4.
+**Removed from the original:** the AI chatbot (`api/chat.js`) and the
+RedxChess interactive chessbot (`/play` route + chess engine), since those
+needed the original author's own API keys and chess engine binaries that
+don't carry over. Everything else — the 3D character, navigation, scroll
+animations, About/Experience/Projects/Contact sections — is intact.
+
+## TODO before deploying
+- **Profile photo**: `public/images/mypicnbg.png` is still Redoyanul's photo
+  (used in the mobile view). Replace it with your own background-removed
+  photo, same filename, to fix this.
+- Everything else (name, bio, project, skills, links, resume) is already
+  filled in via `src/config.ts`.
 
 ## Run locally
 ```
 npm install
 npm run dev
 ```
-Open http://localhost:3000
+Open the local URL it prints (usually http://localhost:5173)
 
-## Customize further
-All content lives in `utils/data/`:
-- `personal-data.js` — name, bio, links, resume
-- `experience.js`
-- `skills.js`
-- `projects-data.js`
-- `educations.js`
-- `contactsData.js`
-
-## Contact form (optional)
-Copy `.env.example` to `.env` and fill in Gmail App Password or Telegram bot
-details if you want the contact form to actually send you messages. See the
-original template's README for setup steps:
-https://github.com/said7388/developer-portfolio#-gmail-app-password-setup
+## Build
+```
+npm run build
+```
 
 ## Deploy
-Push to GitHub, then import the repo in Vercel — it auto-detects Next.js.
+Push to GitHub, then import the repo in Vercel — it auto-detects Vite.
