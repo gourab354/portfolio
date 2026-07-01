@@ -74,7 +74,7 @@ export const config = {
         linkedin: "https://www.linkedin.com/in/GourabDutta354",
         twitter: "",
         facebook: "",
-        instagram: ""
+        instagram: "https://www.instagram.com/user_cooked98"
     },
     skills: {
         develop: {
