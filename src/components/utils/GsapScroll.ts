@@ -61,7 +61,7 @@ export function setCharTimeline(
     }
   });
   let neckBone = character?.getObjectByName("spine005");
-  {
+  if (window.innerWidth > 1024) {
     if (character) {
       tl1
         .fromTo(character.rotation, { y: 0 }, { y: 0.7, duration: 1 }, 0)
@@ -117,6 +117,13 @@ export function setCharTimeline(
         )
         .fromTo(".whatIDO", { y: 0 }, { y: "15%", duration: 2 }, 0)
         .to(character.rotation, { x: -0.04, duration: 2, delay: 1 }, 0);
+    }
+  } else {
+    // Lighter fade-in transition for mobile's stacked (non-fixed) layout
+    if (character) {
+      tl1
+        .fromTo(character.rotation, { y: 0 }, { y: 0.4, duration: 1 }, 0)
+        .fromTo(".about-me", { y: "20%", opacity: 0 }, { y: "0%", opacity: 1 }, 0);
     }
   }
 }

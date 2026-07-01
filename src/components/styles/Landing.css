@@ -1,33 +1,61 @@
 /* Mobile-specific layout override removed - desktop layout now forced on all screen sizes */
 
-/* Mobile readability fix - keeps 3D character but makes text readable and properly positioned */
-@media only screen and (max-width: 768px) {
+/* Mobile-native stacked layout: character above, text below, both full width */
+@media only screen and (max-width: 1024px) {
+  .landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .character-model {
+    position: relative !important;
+    height: 55vh !important;
+    max-height: 55vh;
+    bottom: 0;
+    z-index: 1;
+    order: 1;
+  }
+
+  .character-model::after,
+  .character-model::before {
+    display: block !important;
+  }
+
   .landing-intro {
-    top: 12%;
-    right: 8%;
-    left: 8%;
-    transform: none;
-    text-align: left;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    text-align: center;
     z-index: 12;
+    order: 2;
+    padding: 20px 20px 0;
   }
 
   .landing-intro h1 {
-    font-size: 34px !important;
+    font-size: 32px !important;
     line-height: 1.15 !important;
   }
 
   .landing-info {
-    top: auto;
-    bottom: 8%;
-    left: 8%;
-    right: 8%;
-    transform: none;
-    text-align: left;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    text-align: center;
     z-index: 12;
+    order: 3;
+    padding: 10px 20px 30px;
   }
 
-  .landing-info h3 {
-    font-size: 14px;
+  .landing-info h2 {
+    margin-left: 0;
+    justify-content: center;
   }
 
   .landing-h2-1 {
@@ -38,14 +66,24 @@
     font-size: 17px !important;
   }
 
-  .character-model {
-    height: 100vh;
+  h2.landing-info-h2 {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .landing-info-h2::after {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 480px) {
+  .character-model {
+    height: 48vh !important;
+    max-height: 48vh;
+  }
+
   .landing-intro h1 {
-    font-size: 28px !important;
+    font-size: 26px !important;
   }
 
   .landing-h2-1 {
@@ -388,34 +426,36 @@ h2.landing-info-h2 {
   }
 }
 
-/* Desktop layout forced on all screen sizes per request */
-.character-model {
-  height: 100vh;
-  bottom: 0;
-  z-index: 11;
-  position: fixed;
-}
+/* Desktop layout: side-by-side character + text, pinned full-screen */
+@media screen and (min-width: 1025px) {
+  .character-model {
+    height: 100vh;
+    bottom: 0;
+    z-index: 11;
+    position: fixed;
+  }
 
-.character-model::after,
-.character-model::before {
-  display: none;
-}
+  .character-model::after,
+  .character-model::before {
+    display: none;
+  }
 
-.landing-intro {
-  top: 40%;
-  left: auto;
-  right: 66%;
-  transform: translate(0%, -50%);
-}
+  .landing-intro {
+    top: 40%;
+    left: auto;
+    right: 66%;
+    transform: translate(0%, -50%);
+  }
 
-.landing-info {
-  bottom: auto;
-  top: 51%;
-  z-index: inherit;
-  text-align: left;
-  transform: translate(0%, -50%);
-  right: auto;
-  left: 66%;
+  .landing-info {
+    bottom: auto;
+    top: 51%;
+    z-index: inherit;
+    text-align: left;
+    transform: translate(0%, -50%);
+    right: auto;
+    left: 66%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
