@@ -11,6 +11,15 @@ export let lenis: Lenis | null = null;
 
 const Navbar = () => {
   useEffect(() => {
+    const isMobileDevice = window.innerWidth <= 1024;
+
+    // On mobile, skip Lenis entirely and rely on native touch scrolling —
+    // avoids the page getting stuck if the stop()/start() unlock sequence fails.
+    if (isMobileDevice) {
+      document.body.style.overflowY = "auto";
+      return;
+    }
+
     // Initialize Lenis smooth scroll
     lenis = new Lenis({
       duration: 1.7,

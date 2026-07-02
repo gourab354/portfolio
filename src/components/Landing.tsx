@@ -29,6 +29,10 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">IoT Developer</div>
             </h2>
           </div>
+          <div className="scroll-cue" aria-hidden="true">
+            <span className="scroll-cue-dot"></span>
+            <span className="scroll-cue-text">SCROLL</span>
+          </div>
         </div>
         {children}
       </div>
