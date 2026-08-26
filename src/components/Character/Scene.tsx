@@ -89,13 +89,12 @@ const Scene = () => {
         handleMouseMove(event, (x, y) => (mouse = { x, y }));
       };
       let debounce: number | undefined;
-      const onTouchStart = (event: TouchEvent) => {
-        const element = event.target as HTMLElement;
-        debounce = setTimeout(() => {
-          element?.addEventListener("touchmove", (e: TouchEvent) =>
-            handleTouchMove(e, (x, y) => (mouse = { x, y }))
-          );
-        }, 200);
+      const onTouchStart = () => {
+        // debounce or similar if needed
+      };
+
+      const onTouchMoveHandler = (e: TouchEvent) => {
+        handleTouchMove(e, (x, y) => (mouse = { x, y }));
       };
 
       const onTouchEnd = () => {
@@ -111,6 +110,7 @@ const Scene = () => {
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
         landingDiv.addEventListener("touchstart", onTouchStart);
+        landingDiv.addEventListener("touchmove", onTouchMoveHandler);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
       const animate = () => {
@@ -146,6 +146,7 @@ const Scene = () => {
         if (landingDiv) {
           document.removeEventListener("mousemove", onMouseMove);
           landingDiv.removeEventListener("touchstart", onTouchStart);
+          landingDiv.removeEventListener("touchmove", onTouchMoveHandler);
           landingDiv.removeEventListener("touchend", onTouchEnd);
         }
       };
