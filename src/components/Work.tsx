@@ -74,7 +74,16 @@ const Work = () => {
                   <h3>0{index + 1}</h3>
 
                   <div>
-                    <h4>{project.title}</h4>
+                    <h4>
+                      <a
+                        href={(project as any).github || (project as any).live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "inherit", textDecoration: "none" }}
+                      >
+                        {project.title}
+                      </a>
+                    </h4>
                     <p>{project.category}</p>
                   </div>
                 </div>
