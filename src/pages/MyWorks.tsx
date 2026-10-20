@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { config } from "../config";
+import { useProjects } from "../utils/useProjects";
 import "./MyWorks.css";
 
 const MyWorks = () => {
+  const projects = useProjects();
+
   return (
     <div className="myworks-page">
       <div className="myworks-header">
@@ -16,7 +18,7 @@ const MyWorks = () => {
       </div>
 
       <div className="myworks-grid">
-        {config.projects.map((project, index) => (
+        {projects.map((project, index) => (
           <div className="myworks-card" key={project.id} data-cursor="disable">
             <div className="myworks-card-number">0{index + 1}</div>
             <div className="myworks-card-image">

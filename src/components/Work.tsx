@@ -3,12 +3,14 @@ import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import { config } from "../config";
+import { useProjects } from "../utils/useProjects";
 import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
+  const projects = useProjects();
+
   useEffect(() => {
     // Disable pinning on mobile to allow scrolling
     if (window.innerWidth <= 768) return;
@@ -57,7 +59,7 @@ const Work = () => {
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
     };
-  }, []);
+  }, [projects]);
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -65,7 +67,7 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {config.projects.slice(0, 5).map((project, index) => (
+          {projects.slice(0, 5).map((project, index) => (
             <div className="work-box" key={project.id}>
               <div className="work-info">
                 <div className="work-title">
