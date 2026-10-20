@@ -124,6 +124,41 @@
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.myworks-card-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.myworks-link {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--accentColor);
+  text-decoration: none;
+  border: 1px solid var(--accentColor);
+  padding: 5px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.myworks-link:hover {
+  background: var(--accentColor);
+  color: #000;
+}
+
+.myworks-link-live {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.myworks-link-live:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Responsive */

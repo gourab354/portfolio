@@ -27,6 +27,18 @@ const MyWorks = () => {
               <p className="myworks-card-category">{project.category}</p>
               <p className="myworks-card-description">{project.description}</p>
               <p className="myworks-card-tech">{project.technologies}</p>
+              <div className="myworks-card-links">
+                {(project as any).github && (
+                  <a href={(project as any).github} target="_blank" rel="noopener noreferrer" className="myworks-link">
+                    GitHub →
+                  </a>
+                )}
+                {(project as any).live && (
+                  <a href={(project as any).live} target="_blank" rel="noopener noreferrer" className="myworks-link myworks-link-live">
+                    Live →
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         ))}

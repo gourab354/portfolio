@@ -65,7 +65,72 @@ export const config = {
             category: "IoT / Embedded",
             technologies: "ESP32, C++, Node.js, WebSocket, REST API, HC-SR04, Servo, TTP223, ST7735 TFT",
             image: "/images/eie.png",
+            github: "https://github.com/gourab354/gourab354",
             description: "An ESP32-based IoT health system built around a 5-state finite state machine (IDLE -> ALERTING -> DISPENSING -> CONFIRMED / MISSED). Uses NTP-synced time (IST), HC-SR04 ultrasonic presence detection, a servo-controlled dispensing lid, and a TTP223 touch sensor for dose confirmation with buzzer alerts. A Node.js web dashboard connects over WebSocket and REST API for live state badges and event logging."
+        },
+        {
+            id: 2,
+            title: "Heart CV",
+            category: "Computer Vision / Python",
+            technologies: "Python, OpenCV, Computer Vision",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/heart-cv",
+            description: "A computer vision project built in Python using OpenCV for real-time heart/pulse detection and analysis. Processes video input to extract physiological signals through image processing techniques."
+        },
+        {
+            id: 3,
+            title: "Orbit Eye",
+            category: "Robotics / C++",
+            technologies: "C++, Embedded Systems, Robotics",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/orbit-eye",
+            description: "A C++ based robotic vision system designed to track and monitor objects in an orbital or circular motion. Combines embedded control logic with real-time sensor feedback for accurate target tracking."
+        },
+        {
+            id: 4,
+            title: "Check Mate",
+            category: "Web / JavaScript",
+            technologies: "JavaScript, HTML, CSS",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/check-mate",
+            description: "A JavaScript-based web application for task management and productivity. Provides a clean interface for organizing, tracking, and completing tasks with intuitive checklist features."
+        },
+        {
+            id: 5,
+            title: "4-Legged Crawler",
+            category: "Robotics / C++",
+            technologies: "C++, Servo Motors, Embedded Systems, Robotics",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/4legged-crawler",
+            description: "A quadruped crawling robot built in C++ with coordinated servo motor control. Implements gait algorithms to achieve stable locomotion across different surfaces using a 4-legged mechanical design."
+        },
+        {
+            id: 6,
+            title: "Virtual Steering Wheel",
+            category: "Computer Vision / Python",
+            technologies: "Python, OpenCV, MediaPipe, Computer Vision",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/virtual-steering-wheel",
+            description: "A hand gesture-based virtual steering wheel using Python and OpenCV. Enables real-time vehicle/game control by detecting and tracking hand movements through the webcam without any physical hardware."
+        },
+        {
+            id: 7,
+            title: "Drone Gesture Control",
+            category: "Computer Vision / Drone",
+            technologies: "Python, OpenCV, Gesture Recognition, Drone SDK",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/drone-gesture",
+            description: "A gesture-controlled drone system using Python and OpenCV. Allows pilots to control drone movement and orientation through hand gestures captured by a webcam, eliminating the need for traditional controllers."
+        },
+        {
+            id: 8,
+            title: "Build Club AOT Site",
+            category: "Web / TypeScript",
+            technologies: "TypeScript, React, Next.js, Vercel",
+            image: "/images/eie.png",
+            github: "https://github.com/gourab354/build-club-aot-site",
+            live: "https://build-club-aot-site.vercel.app",
+            description: "Official website for the Build Club at Academy of Technology (AOT). A modern TypeScript/React web application deployed on Vercel, showcasing the club's activities, members, projects, and events."
         }
     ],
     contact: {
